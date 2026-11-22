@@ -1,0 +1,46 @@
+name: Connector request
+description: Ask for PIO connectors for a homebrew or development cart.
+title: "Request: "
+body:
+  - type: input
+    id: handle
+    attributes:
+      label: GitHub handle
+      placeholder: "@you"
+    validations:
+      required: true
+  - type: textarea
+    id: project
+    attributes:
+      label: What you are building
+      description: One or two lines. A link to the design (schematic, repo, board files) is welcome.
+    validations:
+      required: true
+  - type: input
+    id: design
+    attributes:
+      label: Where the design is or will be published
+      description: A link, or where you plan to put it.
+    validations:
+      required: false
+  - type: input
+    id: quantity
+    attributes:
+      label: Quantity
+      value: "1"
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: Region
+      options:
+        - US
+        - UK/EU
+        - Elsewhere
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        The connector is free; postage is yours. Once approved, the issue gets a comment with the postage steps for your region. See SHIPPING.md.
